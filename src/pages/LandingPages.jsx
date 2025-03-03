@@ -1,6 +1,8 @@
 
 import { LegendsGrid } from '../components/Legends_Grid'
 
+
+
 export function LandingPage() {
 
 

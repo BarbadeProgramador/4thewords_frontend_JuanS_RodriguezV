@@ -35,21 +35,21 @@ export  function LegendsGrid() {
   };
 
   return (
-    <section className="w-full flex">
-      {/* Sección de Filtros */}
-      <FiltersSection data={legendsData} onApplyFilters={applyFilters} />
-
-      {/* Sección de Leyendas */}
-      <div className="w-full md:w-3/4 p-4">
-        <h2 className="text-xl font-bold mb-6 text-center">LEGENDS</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {filteredLegends.map((legend) => (
-            <LegendCard key={legend.id} legend={legend} />
-          ))}
-        </div>
+    <section className="w-full flex bg-gray-800/50">
+    {/* Sección de Filtros */}
+    <FiltersSection data={legendsData} onApplyFilters={applyFilters} />
+  
+    {/* Sección de Leyendas */}
+    <div className="w-full md:w-3/4 p-4">
+      <h2 className="text-xl font-bold mb-6 text-center text-white">LEGENDS</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {filteredLegends.map((legend) => (
+          <LegendCard key={legend.id} legend={legend} />
+        ))}
       </div>
-      
-    </section>
+    </div>
+  </section>
+  
   )
 }
 

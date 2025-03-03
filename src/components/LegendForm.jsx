@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function LegendForm({ onSubmit }) {
+export function LegendForm({ handleSubmit }) {
   const [formData, setFormData] = useState({
     nombre: "",
     txt_descrip: "",
@@ -15,32 +15,26 @@ export function LegendForm({ onSubmit }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    const keys = name.split(".");
-
-    if (keys.length > 1) {
-      setFormData((prev) => ({
-        ...prev,
-        [keys[0]]: { ...prev[keys[0]], [keys[1]]: value }
-      }));
+    if (["categoria", "provincia", "canton", "distrito"].includes(name)) {
+      setFormData({ ...formData, [name]: { nombre: value } });
     } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
+      setFormData({ ...formData, [name]: value });
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (typeof onSubmit !== "function") {
-      console.error("onSubmit no es una función. Verifica que se está pasando correctamente.");
-      return;
-    }
-    onSubmit(formData);
-  };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" name="nombre" placeholder="Nombre" value={formData.nombre} onChange={handleChange} />
-      <textarea name="txt_descrip" placeholder="Descripción" value={formData.txt_descrip} onChange={handleChange} />
-      <button type="submit">Guardar Leyenda</button>
-    </form>
+      <input type="text" name="nombre" value={formData.nombre} onChange={handleChange} placeholder="Nombre" />
+      <textarea name="txt_descrip" value={formData.txt_descrip} onChange={handleChange} placeholder="Descripción" />
+      <input type="date" name="fecha_leyenda" value={formData.fecha_leyenda} onChange={handleChange} />
+      <textarea name="historia" value={formData.historia} onChange={handleChange} placeholder="Historia" />
+      <input type="text" name="imagen" value={formData.imagen} onChange={handleChange} placeholder="URL de Imagen" />
+      <input type="text" name="categoria" value={formData.categoria.nombre} onChange={handleChange} placeholder="Categoría" />
+      <input type="text" name="provincia" value={formData.provincia.nombre} onChange={handleChange} placeholder="Provincia" />
+      <input type="text" name="canton" value={formData.canton.nombre} onChange={handleChange} placeholder="Cantón" />
+      <input type="text" name="distrito" value={formData.distrito.nombre} onChange={handleChange} placeholder="Distrito" />
+      <button type="submit">Enviar</button>
+  </form>
   );
 }

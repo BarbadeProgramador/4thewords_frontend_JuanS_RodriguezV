@@ -2,6 +2,8 @@
 import { LegendForm } from "../components/LegendForm";
 
 export function LegendCreate() {
+
+  
   const handleSubmit = async (formData) => {
     console.log("Enviando datos:", formData); // Para depuración
 
