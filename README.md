@@ -1,7 +1,8 @@
 ## Frontend - API Leyendas
 
 #### 📌 Estructura de Vistas
-![image](https://github.com/user-attachments/assets/628f4bac-2d06-4194-b22f-f6f92216a879)
+![image](https://github.com/user-attachments/assets/389847c5-375e-4796-b5d8-3e9351761744)
+
 
 #### 🛠️ Tecnologías Utilizadas
 - **JavaScript**
