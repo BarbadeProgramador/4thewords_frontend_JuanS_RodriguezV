@@ -1,6 +1,6 @@
 ## Frontend - API Leyendas
 
-#### 📌 Estructura de Vistas
+#### 📌 Estructura de Templates
 ![image](https://github.com/user-attachments/assets/389847c5-375e-4796-b5d8-3e9351761744)
 
 
